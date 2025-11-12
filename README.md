@@ -74,3 +74,24 @@ MIT License
 ## バージョン
 
 2.0.0 - Log-Alignment + Neuro + SS integration
+
+## 高速化オプション
+
+Numbaを使った高速版が利用可能です：
+
+```bash
+# 高速版をインストール
+pip install -e ".[fast]"
+```
+
+Numbaがインストールされていると、計算が自動的に5-50倍高速化されます。
+Numbaがない場合は通常版が使われます（自動フォールバック）。
+
+```python
+from ssd_engine.core.ssd_core_engine_fast import NUMBA_AVAILABLE
+
+if NUMBA_AVAILABLE:
+    print("✓ Numba加速が有効です")
+else:
+    print("通常版を使用します")
+```
