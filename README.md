@@ -95,16 +95,3 @@ if NUMBA_AVAILABLE:
 else:
     print("通常版を使用します")
 ```
-
-## C++ / Native Implementation
-
-高性能が必要な場合、C++実装も利用可能です：
-
-- [SSD-Universal-Engine](https://github.com/HermannDegner/SSD-Universal-Engine) - C++ DLL実装
-  - さらなる高速化（C++ネイティブ）
-  - DLL/共有ライブラリとしてビルド
-  - Python ctypesから呼び出し可能
-
-Python版との比較：
-- **Python + Numba**: 4.38倍高速（470K steps/sec）
-- **C++ DLL**: 推定10-100倍高速（数百万 steps/sec）
